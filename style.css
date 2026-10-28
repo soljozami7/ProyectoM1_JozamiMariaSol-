@@ -71,7 +71,9 @@ main{
     cursor:pointer;
     box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.2);
     transition:background-color 0.2s, box-shadow 0.2s;
-       border: none;
+    background-color 0.2s,
+    box-shadow 0.2s;
+    border: none;
     }
 
 #btn-generar:hover{
@@ -82,4 +84,19 @@ main{
 #btn-generar:active{
     transform: translate(0.1rem);
 
+}
+
+.contenedor-paleta{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    
+
+}
+
+.color {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: violet;
 }
