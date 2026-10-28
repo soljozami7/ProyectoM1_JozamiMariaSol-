@@ -1,0 +1,85 @@
+/*resetear estilos*/ 
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 2rem;
+    background: color #f5f5f5; 
+}
+
+h1{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+main{
+    width: min(100%, 62.5 rem)
+    margin:0 auto;
+
+}
+
+.controles{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(120, 159, 125);
+    
+}
+
+.controles label{
+    font-weight: 600;
+    color: #333;
+}
+
+.controles select{
+    min-width: 10rem;
+    padding: 0,5 rem;
+    border-radius: 0.3rem;
+    background-color: #fff;
+    color: rgb(92, 59, 145);
+    font: bold 1rem sans-serif;
+    cursor: pointer;
+    border: none;
+    transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.controles select:hover{
+    border-color: #03649c; 
+}
+
+.controles select:focus-visible{
+    outline: none;
+    border-color: #03649c;
+    box-shadow: 0 0 0 0.18rem rgba (3,100,156,0.3)
+}
+
+#btn-generar{
+    background-color: #896442 ;
+    color:white ;
+    padding 0.7rem 2rem
+    border-radius: 50px !important;
+    font-size: 2rem;
+    cursor:pointer;
+    box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.2);
+    transition:background-color 0.2s, box-shadow 0.2s;
+       border: none;
+    }
+
+#btn-generar:hover{
+    background-color: #c79a6f;
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.2) ;
+}
+
+#btn-generar:active{
+    transform: translate(0.1rem);
+
+}
