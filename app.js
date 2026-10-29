@@ -16,6 +16,7 @@ const selectCantidad = document.getElementById("select-cantidad");
 const formatoColor = document.getElementById("formato-color");
 
 
+
 // ============================================
 // FUNCIÓN PARA GENERAR LA PALETA
 // ============================================
@@ -57,11 +58,20 @@ function generarPaleta() {
         // Aplicamos el color generado al fondo del cuadro.
         color.style.backgroundColor = codigoHex;
 
-        // Creamos un párrafo para mostrar el código del color.
+       // Creamos un párrafo para mostrar el código del color.
         const textoHex = document.createElement("p");
 
-        // Le asignamos el código HEX al texto del párrafo.
+        // Comprobamos qué formato eligió el usuario.
+        if (formatoColor.value === "hsl") {
+
+        // Convertimos el color HEX a HSL y lo mostramos.
+        textoHex.textContent = convertirHexAHsl(codigoHex);
+
+        } else {
+
+        // Si eligió HEX, mostramos el código original.
         textoHex.textContent = codigoHex;
+        }
 
         // Agregamos el párrafo a la tarjeta.
         tarjeta.appendChild(textoHex);
@@ -234,6 +244,8 @@ function cambiarColores() {
             // Si eligió HEX, mostramos el código HEX original.
             textoColor.textContent = codigoHex;
         }
+        
+        
     }
 }
 
