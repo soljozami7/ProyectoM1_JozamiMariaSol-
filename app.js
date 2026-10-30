@@ -78,6 +78,33 @@ function generarPaleta() {
         // Agregamos el párrafo a la tarjeta.
         tarjeta.appendChild(textoHex);
 
+        // Creamos el botón para bloquear el color.
+const btnBloquear = document.createElement("button");
+
+// Le asignamos el símbolo de desbloqueado.
+btnBloquear.textContent = "🔓";
+
+// Indicamos que inicialmente el color está desbloqueado.
+tarjeta.dataset.bloqueado = "false";
+
+// Cuando hacemos clic, cambiamos el estado del bloqueo.
+btnBloquear.addEventListener("click", function() {
+
+    if (tarjeta.dataset.bloqueado === "false") {
+
+        tarjeta.dataset.bloqueado = "true";
+        btnBloquear.textContent = "🔒";
+
+    } else {
+
+        tarjeta.dataset.bloqueado = "false";
+        btnBloquear.textContent = "🔓";
+    }
+});
+
+// Agregamos el botón a la tarjeta.
+tarjeta.appendChild(btnBloquear);
+
         // Agregamos la tarjeta completa al contenedor de la paleta.
         contenedorPaleta.appendChild(tarjeta);
     }
@@ -220,6 +247,11 @@ function cambiarColores() {
         // Seleccionamos la tarjeta que corresponde a la posición actual.
         const tarjeta = contenedorPaleta.children[i];
 
+                // Comprobamos si el color está bloqueado.
+        if (tarjeta.dataset.bloqueado === "true") {
+            continue
+        }
+
         // Buscamos dentro de la tarjeta el cuadro que tiene la clase color.
         const color = tarjeta.querySelector(".color");
 
@@ -246,16 +278,15 @@ function cambiarColores() {
             // Si eligió HEX, mostramos el código HEX original.
             textoColor.textContent = codigoHex;
         }
+      
+    }
+         mensaje.textContent = "¡Paleta generada!";
+         mensaje.style.display = "block";
         
-        mensaje.textContent = "¡Paleta generada!";
-        mensaje.style.display = "block";
-        
-        setTimeout(function() {
+         setTimeout(function() {
             mensaje.textContent = "";
             mensaje.style.display = "none";
         }, 500);
-        
-    }
 }
 
 
@@ -270,7 +301,7 @@ function actualizarFormatoColores() {
     for (let i = 0; i < contenedorPaleta.children.length; i++) {
 
         // Seleccionamos la tarjeta actual.
-        const tarjeta = contenedorPaleta.children[i];
+        const tarjeta = contenedorPaleta.children[i]; 
 
         // Recuperamos el código HEX original guardado en la tarjeta.
         const codigoHex = tarjeta.dataset.hex;
