@@ -162,7 +162,22 @@ main {
 
 /* Organiza verticalmente el cuadrado de color y su código. */
 .tarjeta-color {
-    display: flex;
+     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
+#mensaje {
+   text-align: center;
+    color: #477a50;
+    font-size: 0.9rem;
+    margin: 30px auto 0;
+    font-weight: bold;
+    background-color: #e5f2e7;
+    border: 1px solid #9bc5a1;
+    border-radius: 8px;
+    padding: 10px 18px;
+    width: fit-content;
+    display: none;
+}

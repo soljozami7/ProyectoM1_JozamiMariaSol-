@@ -15,6 +15,8 @@ const selectCantidad = document.getElementById("select-cantidad");
 // Captura el selector de formato de color por su ID.
 const formatoColor = document.getElementById("formato-color");
 
+const mensaje = document.getElementById("mensaje");
+
 
 
 // ============================================
@@ -80,8 +82,8 @@ function generarPaleta() {
         contenedorPaleta.appendChild(tarjeta);
     }
 
-    // Si el usuario elige menos colores, eliminamos las tarjetas sobrantes.
-    while (contenedorPaleta.children.length > cantidad) {
+        // Si el usuario elige menos colores, eliminamos las tarjetas sobrantes.
+        while (contenedorPaleta.children.length > cantidad) {
 
         // Eliminamos la última tarjeta de la paleta.
         contenedorPaleta.lastElementChild.remove();
@@ -245,6 +247,13 @@ function cambiarColores() {
             textoColor.textContent = codigoHex;
         }
         
+        mensaje.textContent = "¡Paleta generada!";
+        mensaje.style.display = "block";
+        
+        setTimeout(function() {
+            mensaje.textContent = "";
+            mensaje.style.display = "none";
+        }, 500);
         
     }
 }
