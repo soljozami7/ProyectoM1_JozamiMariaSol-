@@ -17,6 +17,16 @@
     box-sizing: border-box;
 }
 
+/* ============================================
+   TIPOGRAFÍA OUTFIT
+   ============================================ */
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('./fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
 
 /* ============================================
    2. ESTILOS GENERALES DE LA PÁGINA
@@ -44,20 +54,46 @@ body {
    ============================================ */
 
 h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5 rem;
     /* Separa el título del contenido siguiente. */
 
     text-align: center;
     /* Centra el título horizontalmente. */
 
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     /* Define el tamaño de las letras. */
 
     color: #292d32;
     /* Establece el color del título. */
 
-    font-weight: 700;
+    font-weight: 800;
     /* Hace que las letras se vean más gruesas. */
+
+    font-family: 'Outfit', sans-serif;
+
+    fletter-spacing: -1.5px;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    /* Separa el título del contenido siguiente. */
+
+    text-align: center;
+    /* Centra el título horizontalmente. */
+
+    font-size: 2rem;
+    /* Define el tamaño de las letras. */
+
+    color: #292d32;
+    /* Establece el color del título. */
+
+    font-weight: 600;
+    /* Hace que las letras se vean más gruesas. */
+
+    font-family: 'Outfit', sans-serif;
+   
+    letter-spacing: -1.5px;
+
 }
 
 
