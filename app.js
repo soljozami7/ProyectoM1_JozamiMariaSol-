@@ -105,6 +105,33 @@ btnBloquear.addEventListener("click", function() {
 // Agregamos el botón a la tarjeta.
 tarjeta.appendChild(btnBloquear);
 
+// Creamos el botón para copiar el código del color.
+const btnCopiar = document.createElement("button");
+
+// Le ponemos el texto que verá el usuario.
+btnCopiar.textContent = "📋 Copiar";
+
+// Cuando el usuario hace clic, copiamos el código HEX.
+btnCopiar.addEventListener("click", function() {
+    
+    // Obtenemos el código que se está mostrando en pantalla.
+const textoColor = tarjeta.querySelector("p").textContent;
+
+// Copiamos ese código al portapapeles.
+navigator.clipboard.writeText(textoColor);
+
+    mensaje.textContent = "¡Color copiado!";
+    mensaje.style.display = "block";
+
+    setTimeout(function() {
+        mensaje.textContent = "";
+        mensaje.style.display = "none";
+    }, 1000);
+});
+
+// Agregamos el botón a la tarjeta.
+tarjeta.appendChild(btnCopiar);
+
         // Agregamos la tarjeta completa al contenedor de la paleta.
         contenedorPaleta.appendChild(tarjeta);
     }

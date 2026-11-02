@@ -1,8 +1,16 @@
 /* ============================================
+   COLORFLY STUDIO
+   HOJA DE ESTILOS PRINCIPAL
+   ============================================ */
+
+
+/* ============================================
    1. RESETEO DE ESTILOS
    ============================================ */
 
-/* Eliminamos los márgenes y rellenos predeterminados del navegador. */
+/* Eliminamos los márgenes y rellenos predeterminados
+   del navegador y facilitamos el cálculo de tamaños. */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,9 +23,19 @@
    ============================================ */
 
 body {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    padding: 2rem;
-    background-color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    /* Define la tipografía general de la página. */
+
+    padding: 3rem 2rem;
+    /* Agrega espacio alrededor de todo el contenido.
+       El primer valor es arriba y abajo.
+       El segundo valor es izquierda y derecha. */
+
+    background-color: #f4f5f7;
+    /* Establece un fondo gris muy suave. */
+
+    color: #333;
+    /* Define el color de texto predeterminado. */
 }
 
 
@@ -27,7 +45,19 @@ body {
 
 h1 {
     margin-bottom: 2rem;
+    /* Separa el título del contenido siguiente. */
+
     text-align: center;
+    /* Centra el título horizontalmente. */
+
+    font-size: 2.5rem;
+    /* Define el tamaño de las letras. */
+
+    color: #292d32;
+    /* Establece el color del título. */
+
+    font-weight: 700;
+    /* Hace que las letras se vean más gruesas. */
 }
 
 
@@ -37,97 +67,181 @@ h1 {
 
 main {
     width: min(100%, 62.5rem);
+    /* Ocupa el 100% del espacio disponible,
+       pero nunca supera los 62.5 rem. */
+
     margin: 0 auto;
+    /* Centra el contenido horizontalmente. */
 }
 
 
 /* ============================================
-   5. CONTROLES: ETIQUETAS, SELECTORES Y BOTÓN
+   5. CONTROLES: ETIQUETAS Y SELECTORES
    ============================================ */
 
-/* Contenedor que organiza los controles de la página. */
+/* Contenedor que organiza los controles
+   de cantidad, formato y generación. */
+
 .controles {
     display: flex;
+    /* Organiza los elementos mediante Flexbox. */
+
     align-items: center;
-    gap: 0.75rem;
+    /* Alinea los elementos verticalmente. */
+
+    gap: 1rem;
+    /* Establece la separación entre los controles. */
+
     margin-bottom: 2rem;
+    /* Separa los controles de la paleta. */
+
     flex-wrap: wrap;
+    /* Permite que los elementos bajen de línea
+       si no hay suficiente espacio. */
+
     justify-content: center;
-    background-color: rgb(120, 159, 125);
+    /* Centra los elementos horizontalmente. */
+
+    background-color: white;
+    /* Establece el fondo blanco del panel. */
+
+    padding: 1.5rem;
+    /* Agrega espacio interno al panel. */
+
+    border-radius: 15px;
+    /* Redondea las esquinas del panel. */
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    /* Agrega una sombra suave alrededor del panel. */
 }
 
 
 /* Estilos de las etiquetas de los selectores. */
+
 .controles label {
     font-weight: 600;
+    /* Hace que las etiquetas se vean más destacadas. */
+
     color: #333;
+    /* Define el color del texto. */
 }
 
 
 /* Estilos de los selectores desplegables. */
+
 .controles select {
     min-width: 10rem;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
-    background-color: #fff;
-    color: rgb(92, 59, 145);
-    font: bold 1rem sans-serif;
-    cursor: pointer;
-    border: none;
+    /* Establece un ancho mínimo. */
 
-    /* Transiciones para los cambios visuales. */
-    transition:
-        border-color 0.2s,
-        box-shadow 0.2s;
+    padding: 0.5rem;
+    /* Agrega espacio interno. */
+
+    border-radius: 0.3rem;
+    /* Redondea las esquinas. */
+
+    background-color: #fff;
+    /* Establece el fondo blanco. */
+
+    color: rgb(92, 59, 145);
+    /* Define el color del texto. */
+
+    font: bold 1rem sans-serif;
+    /* Define tipografía, tamaño y grosor. */
+
+    cursor: pointer;
+    /* Muestra la manito al pasar el mouse. */
+
+    border: none;
+    /* Elimina el borde predeterminado. */
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+    /* Suaviza los cambios de borde y sombra. */
 }
 
 
-/* Cambia el borde cuando el usuario pasa el cursor por el selector. */
+/* Cambia el borde cuando el usuario pasa el cursor. */
+
 .controles select:hover {
     border-color: #03649c;
 }
 
 
-/* Estilos del selector cuando recibe el foco del teclado. */
+/* Estilos cuando el selector recibe el foco del teclado. */
+
 .controles select:focus-visible {
     outline: none;
+    /* Elimina el contorno predeterminado. */
+
     border-color: #03649c;
+    /* Cambia el color del borde. */
+
     box-shadow: 0 0 0 0.18rem rgba(3, 100, 156, 0.3);
+    /* Agrega un indicador visual de foco. */
 }
 
 
 /* ============================================
-   6. BOTÓN PARA GENERAR LA PALETA
+   6. BOTÓN GENERAR PALETA
    ============================================ */
 
-/* Estilos principales del botón. */
+/* Estilos principales del botón de generación. */
+
 #btn-generar {
-    background-color: #896442;
+    background: linear-gradient(135deg, #8e44ad, #e056a0, #f39c6b);
+    /* Crea un degradado que mezcla violeta,
+       rosa y naranja. */
+
     color: white;
-    padding: 0.7rem 2rem;
-    border-radius: 50px !important;
-    font-size: 2rem;
+    /* Define el color del texto. */
+
+    padding: 1rem 2.5rem;
+    /* Agrega espacio interno al botón. */
+
+    border-radius: 50px;
+    /* Redondea completamente las esquinas. */
+
+    font-size: 1.1rem;
+    /* Define el tamaño del texto. */
+
+    font-weight: bold;
+    /* Hace que el texto se vea más grueso. */
+
+    letter-spacing: 1px;
+    /* Separa ligeramente las letras. */
+
     cursor: pointer;
-    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
+    /* Muestra la manito al pasar el mouse. */
+
     border: none;
+    /* Elimina el borde predeterminado. */
 
-    /* Transiciones para los cambios visuales. */
-    transition:
-        background-color 0.2s,
-        box-shadow 0.2s;
+    box-shadow: 0 6px 15px rgba(142, 68, 173, 0.25);
+    /* Agrega una sombra violeta suave. */
+
+    transition: all 0.3s ease;
+    /* Hace que los cambios visuales sean suaves. */
 }
 
 
-/* Cambia el aspecto del botón cuando el usuario pasa el cursor. */
+/* Efecto cuando el usuario pasa el mouse. */
+
 #btn-generar:hover {
-    background-color: #c79a6f;
-    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    /* Eleva el botón 4 píxeles. */
+
+    box-shadow: 0 10px 22px rgba(142, 68, 173, 0.35);
+    /* Aumenta la sombra para reforzar la elevación. */
+
+    filter: brightness(1.08);
+    /* Aumenta ligeramente el brillo. */
 }
 
 
-/* Efecto visual al presionar el botón. */
+/* Efecto visual cuando el usuario presiona el botón. */
+
 #btn-generar:active {
-    transform: translate(0.1rem);
+    transform: translateY(1px) scale(0.97);
+    /* Desplaza y reduce ligeramente el botón. */
 }
 
 
@@ -135,24 +249,58 @@ main {
    7. CONTENEDOR DE LA PALETA
    ============================================ */
 
-/* Organiza las tarjetas de colores una al lado de la otra. */
+/* Organiza todas las tarjetas de colores
+   una al lado de la otra. */
+
 .contenedor-paleta {
     display: flex;
+    /* Activa Flexbox para organizar las tarjetas. */
+
     width: 100%;
-    gap: 10px;
+    /* Ocupa todo el ancho disponible. */
+
+    gap: 12px;
+    /* Establece la separación entre tarjetas. */
 }
 
 
 /* ============================================
-   8. CUADRADOS DE COLORES
+   8. MUESTRAS DE COLORES
    ============================================ */
 
-/* Define el tamaño y el borde de cada cuadrado de color. */
+/* Define la apariencia de cada muestra de color. */
+
 .color {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
+    width: 100%;
+    /* Ocupa todo el ancho disponible de su tarjeta. */
+
+    height: 190px;
+    /* Define la altura de la muestra. */
+
+    border-radius: 18px;
+    /* Redondea las esquinas. */
+
     background-color: violet;
+    /* Color inicial de referencia.
+       JavaScript lo reemplaza por el color generado. */
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    /* Agrega una sombra suave. */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Suaviza los efectos al pasar el mouse. */
+}
+
+
+/* Efecto visual cuando el usuario pasa el mouse
+   sobre una muestra de color. */
+
+.color:hover {
+    transform: translateY(-5px);
+    /* Eleva la muestra 5 píxeles. */
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+    /* Aumenta la sombra. */
 }
 
 
@@ -160,24 +308,313 @@ main {
    9. TARJETAS DE COLORES
    ============================================ */
 
-/* Organiza verticalmente el cuadrado de color y su código. */
+/* Contiene la muestra, el código y los botones. */
+
 .tarjeta-color {
-     display: flex;
+    flex: 1 1 120px;
+    /* Hace que todas las tarjetas compartan
+       equitativamente el espacio disponible. */
+
+    min-width: 0;
+    /* Permite que las tarjetas se achiquen
+       cuando aumenta la cantidad de colores. */
+
+    display: flex;
+    /* Activa Flexbox dentro de cada tarjeta. */
+
     flex-direction: column;
+    /* Organiza los elementos verticalmente. */
+
     align-items: center;
+    /* Centra los elementos horizontalmente. */
+
     text-align: center;
+    /* Centra el texto. */
+
+    background-color: white;
+    /* Establece el fondo blanco de la tarjeta. */
+
+    padding: 10px;
+    /* Agrega espacio interno. */
+
+    border-radius: 18px;
+    /* Redondea las esquinas. */
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    /* Agrega una sombra muy suave. */
+
+    gap: 10px;
+    /* Separa los elementos internos. */
 }
 
-#mensaje {
-   text-align: center;
-    color: #477a50;
+
+/* ============================================
+   10. CÓDIGOS HEX Y HSL
+   ============================================ */
+
+/* Estilos del párrafo que muestra el código del color. */
+
+.tarjeta-color p {
+    font-family: Arial, Helvetica, sans-serif;
+    /* Define la tipografía del código. */
+
     font-size: 0.9rem;
-    margin: 30px auto 0;
+    /* Define el tamaño del texto. */
+
     font-weight: bold;
+    /* Destaca el código. */
+
+    color: #444;
+    /* Establece un gris oscuro. */
+
+    padding: 5px;
+    /* Agrega espacio alrededor del código. */
+}
+
+
+/* ============================================
+   11. BOTONES COPIAR Y BLOQUEAR
+   ============================================ */
+
+/* Estilos generales compartidos por ambos botones. */
+
+.tarjeta-color button {
+    border: none;
+    /* Elimina el borde predeterminado. */
+
+    border-radius: 20px;
+    /* Redondea las esquinas. */
+
+    padding: 8px 14px;
+    /* Define el espacio interno. */
+
+    cursor: pointer;
+    /* Muestra la manito al pasar el mouse. */
+
+    font-size: 0.85rem;
+    /* Define el tamaño del texto. */
+
+    font-weight: bold;
+    /* Destaca el texto. */
+
+    transition: all 0.2s ease;
+    /* Suaviza los cambios visuales. */
+}
+
+
+/* Primer botón de la tarjeta: BLOQUEAR. */
+
+.tarjeta-color button:first-of-type {
+    background-color: #f3f3f3;
+    /* Fondo gris claro. */
+
+    color: #555;
+    /* Texto gris oscuro. */
+}
+
+
+/* Último botón de la tarjeta: COPIAR. */
+
+.tarjeta-color button:last-of-type {
+    background-color: #eee5f5;
+    /* Fondo violeta muy suave. */
+
+    color: #8846a8;
+    /* Texto violeta. */
+}
+
+
+/* Efecto visual compartido por ambos botones. */
+
+.tarjeta-color button:hover {
+    transform: translateY(-2px);
+    /* Eleva ligeramente el botón. */
+
+    filter: brightness(0.96);
+    /* Modifica sutilmente su brillo. */
+}
+
+
+/* ============================================
+   12. MENSAJES DE CONFIRMACIÓN
+   ============================================ */
+
+/* Estilos del mensaje que aparece al generar
+   o copiar un color. */
+
+#mensaje {
+    position: fixed;
+    /* Mantiene el mensaje flotando sin ocupar espacio
+       ni empujar otros elementos de la página. */
+
+    bottom: 25px;
+    /* Lo ubica a 25 píxeles del borde inferior. */
+
+    left: 50%;
+    /* Lo posiciona en el centro horizontal. */
+
+    transform: translateX(-50%);
+    /* Corrige la posición para centrarlo perfectamente. */
+
+    text-align: center;
+    /* Centra el texto. */
+
+    color: #477a50;
+    /* Define un verde oscuro. */
+
+    font-size: 0.9rem;
+    /* Define el tamaño del mensaje. */
+
+    font-weight: bold;
+    /* Destaca el mensaje. */
+
     background-color: #e5f2e7;
+    /* Fondo verde muy suave. */
+
     border: 1px solid #9bc5a1;
+    /* Borde verde claro. */
+
     border-radius: 8px;
+    /* Redondea las esquinas. */
+
     padding: 10px 18px;
+    /* Agrega espacio interno. */
+
     width: fit-content;
+    /* Hace que el ancho se adapte al texto. */
+
     display: none;
+    /* Oculta el mensaje inicialmente.
+       JavaScript lo muestra cuando es necesario. */
+
+    z-index: 1000;
+    /* Lo mantiene por encima de otros elementos. */
+}
+
+/* ============================================
+   13. FOOTER
+   ============================================ */
+
+/* Contenedor principal del pie de página. */
+
+.footer {
+    margin-top: 4rem;
+    /* Separa el footer del contenido anterior. */
+
+    padding: 1.5rem;
+    /* Agrega espacio interno. */
+
+    background-color: #ffffff;
+    /* Establece un fondo blanco. */
+
+    color: #777;
+    /* Define el color general del texto. */
+
+    text-align: center;
+    /* Centra el contenido. */
+
+    border-radius: 15px;
+    /* Redondea las esquinas. */
+
+    border: 1px solid #eeeeee;
+    /* Agrega un borde gris muy suave. */
+}
+
+
+/* Estilos de los párrafos del footer. */
+
+.footer p {
+    margin-bottom: 0.5rem;
+    /* Separa los párrafos entre sí. */
+
+    font-size: 0.85rem;
+    /* Define el tamaño del texto. */
+}
+
+
+/* Primer párrafo del footer: nombre de la aplicación. */
+
+.footer p:first-child {
+    font-size: 1.1rem;
+    /* Hace que el nombre sea más grande. */
+
+    font-weight: bold;
+    /* Destaca el nombre. */
+
+    color: #a45bc5;
+    /* Utiliza un violeta que combina con la identidad visual. */
+}
+
+/* ============================================
+   14. DISEÑO RESPONSIVE
+   ============================================ */
+
+   @media (max-width: 768px) {
+
+    body {
+        padding: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .controles {
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+
+    .contenedor-paleta {
+        gap: 10px;
+    }
+}   
+
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 1.5rem 0.75rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .controles {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .controles select,
+    #btn-generar {
+        width: 100%;
+    }
+
+    .contenedor-paleta {
+        gap: 8px;
+    }
+
+    .tarjeta-color {
+        flex-basis: 100px;
+        padding: 6px;
+    }
+
+    .color {
+        height: 130px;
+    }
+
+    .tarjeta-color p {
+        font-size: 0.75rem;
+        overflow-wrap: anywhere;
+    }
+
+    .tarjeta-color button {
+        padding: 7px 9px;
+        font-size: 0.75rem;
+    }
+
+    .footer {
+        margin-top: 2rem;
+        padding: 1rem;
+    }
 }
