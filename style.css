@@ -70,10 +70,7 @@ h1 {
     font-size: 3.5rem;
     /* Define el tamaño de las letras. */
 
-    color: #292d32;
-    /* Establece el color del título. */
-
-    font-weight: 800;
+        font-weight: 800;
     /* Hace que las letras se vean más gruesas. */
 
     font-family: 'Outfit', sans-serif;
