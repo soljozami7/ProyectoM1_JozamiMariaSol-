@@ -113,7 +113,7 @@ btnCopiar.textContent = "📋 Copiar";
 
 // Cuando el usuario hace clic, copiamos el código HEX.
 btnCopiar.addEventListener("click", function() {
-    
+
     // Obtenemos el código que se está mostrando en pantalla.
 const textoColor = tarjeta.querySelector("p").textContent;
 
@@ -196,7 +196,7 @@ function convertirHexAHsl(codigoHex) {
     // Eliminamos el símbolo # del código HEX.
     codigoHex = codigoHex.replace("#", "");
 
-    // Extraemos los componentes rojo, verde y azul del código hexadecimal.
+    // Extraemos los componentes rojo, verde y azul del código hexadecimal. substring() sirve para extraer una parte de un texto. parseInt() sirve para convertir un texto en un número entero.
     const rojo = parseInt(codigoHex.substring(0, 2), 16);
     const verde = parseInt(codigoHex.substring(2, 4), 16);
     const azul = parseInt(codigoHex.substring(4, 6), 16);
@@ -212,7 +212,7 @@ function convertirHexAHsl(codigoHex) {
     // Buscamos el componente de menor valor.
     const min = Math.min(r, g, b);
 
-    // Calculamos la luminosidad como el promedio entre máximo y mínimo.
+    // Calculamos la luminosidad como el promedio entre máximo y mínimo. 
     const l = (max + min) / 2;
 
     // Declaramos la variable que almacenará la saturación.

@@ -23,9 +23,16 @@
 
 @font-face {
     font-family: 'Outfit';
-    src: url('./fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+    /* Nombre con el que vamos a identificar la fuente en CSS. */
+
+    src: url('./Fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+    /* Indica la ubicación del archivo de la fuente dentro del proyecto. */
+
     font-weight: 100 900;
+    /* Permite utilizar distintos grosores de la fuente. */
+
     font-style: normal;
+    /* Indica que estamos utilizando el estilo normal, no cursiva. */
 }
 
 /* ============================================
@@ -33,7 +40,7 @@
    ============================================ */
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Outfit', sans-serif;
     /* Define la tipografía general de la página. */
 
     padding: 3rem 2rem;
@@ -54,7 +61,7 @@ body {
    ============================================ */
 
 h1 {
-    margin-bottom: 1.5 rem;
+    margin-bottom: 1.5rem;
     /* Separa el título del contenido siguiente. */
 
     text-align: center;
@@ -70,12 +77,29 @@ h1 {
     /* Hace que las letras se vean más gruesas. */
 
     font-family: 'Outfit', sans-serif;
+    /* Aplica la fuente Outfit al título. */
 
-    fletter-spacing: -1.5px;
+    letter-spacing: -1.5px;
+    /* Intenta ajustar el espacio entre las letras. */
+
+
+    /* Degradado de colores para el título */
+
+    background: linear-gradient(135deg, #8e44ad, #e056a0, #f39c6b);
+    /* Combina violeta, rosa y naranja en un degradado diagonal. */
+
+    background-clip: text;
+    /* Hace que el fondo se aplique solamente al texto. */
+
+    -webkit-background-clip: text;
+    /* Compatibilidad con navegadores basados en WebKit. */
+
+    color: transparent;
+    /* Hace transparente el texto para que se vea el degradado. */
 }
 
 h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     /* Separa el título del contenido siguiente. */
 
     text-align: center;
@@ -84,15 +108,17 @@ h2 {
     font-size: 2rem;
     /* Define el tamaño de las letras. */
 
-    color: #292d32;
+    color: #679076;
     /* Establece el color del título. */
 
     font-weight: 600;
     /* Hace que las letras se vean más gruesas. */
 
     font-family: 'Outfit', sans-serif;
-   
+    /* Aplica la fuente Outfit al subtítulo. */
+
     letter-spacing: -1.5px;
+    /* Reduce ligeramente el espacio entre las letras. */
 
 }
 
@@ -297,7 +323,9 @@ main {
 
     gap: 12px;
     /* Establece la separación entre tarjetas. */
+    
 }
+
 
 
 /* ============================================
@@ -527,6 +555,7 @@ main {
     /* Lo mantiene por encima de otros elementos. */
 }
 
+
 /* ============================================
    13. FOOTER
    ============================================ */
@@ -581,76 +610,163 @@ main {
     /* Utiliza un violeta que combina con la identidad visual. */
 }
 
+
 /* ============================================
    14. DISEÑO RESPONSIVE
    ============================================ */
 
-   @media (max-width: 768px) {
+/* ============================================
+   RESPONSIVE PARA TABLETS Y PANTALLAS
+   DE HASTA 768 PIXELES DE ANCHO
+   ============================================ */
+
+/* @media permite aplicar estilos solamente cuando
+   la pantalla cumple con una condición determinada.
+
+   En este caso, max-width: 768px significa que estas
+   reglas se aplican cuando la pantalla mide 768 píxeles
+   de ancho o menos.
+
+   Sirve para adaptar el diseño a tablets y pantallas
+   más pequeñas que una computadora. */
+
+@media (max-width: 768px) {
 
     body {
         padding: 2rem 1rem;
+        /* Reduce el espacio exterior de la página.
+           Primer valor: arriba y abajo.
+           Segundo valor: izquierda y derecha.
+           Así el contenido tiene más espacio en pantallas chicas. */
     }
 
     h1 {
         font-size: 2.5rem;
+        /* Reduce el tamaño del título principal
+           para que se adapte mejor al ancho de la pantalla. */
     }
 
     .controles {
         gap: 0.8rem;
+        /* Reduce la separación entre los controles
+           para que ocupen menos espacio. */
+
         padding: 1rem;
+        /* Reduce el espacio interno del panel de controles. */
     }
 
     .contenedor-paleta {
         gap: 10px;
+        /* Reduce la distancia entre las tarjetas de colores. */
     }
-}   
+}
 
+
+/* ============================================
+   RESPONSIVE PARA CELULARES Y PANTALLAS
+   DE HASTA 480 PIXELES DE ANCHO
+   ============================================ */
+
+/* Este segundo media query se aplica cuando la pantalla
+   mide 480 píxeles de ancho o menos.
+
+   Está pensado principalmente para celulares.
+
+   Como 480 es menor que 768, cuando estamos en un celular
+   se aplican estas reglas y también las del media query
+   anterior, siempre que no se contradigan.
+
+   Si una propiedad aparece en ambos bloques, normalmente
+   prevalece la del media query que está más abajo,
+   porque se encuentra después en el CSS. */
 
 @media (max-width: 480px) {
 
     body {
         padding: 1.5rem 0.75rem;
+        /* Reduce todavía más los márgenes exteriores.
+           Esto permite aprovechar mejor el espacio
+           disponible en la pantalla del celular. */
     }
 
     h1 {
         font-size: 2rem;
+        /* Achica el título principal para que
+           no ocupe demasiado ancho en el celular. */
     }
 
     .controles {
         flex-direction: column;
+        /* Cambia la dirección de Flexbox.
+           En lugar de organizar los controles en una fila,
+           los coloca uno debajo del otro. */
+
         align-items: stretch;
+        /* Estira los controles para que ocupen
+           todo el ancho disponible del contenedor. */
     }
 
     .controles select,
     #btn-generar {
         width: 100%;
+        /* Hace que los selectores y el botón ocupen
+           el 100% del ancho disponible.
+           Así quedan alineados y tienen un tamaño cómodo
+           para tocar con el dedo. */
     }
 
     .contenedor-paleta {
         gap: 8px;
+        /* Reduce la separación entre las tarjetas
+           para aprovechar mejor el ancho del celular. */
+           flex-direction: column;
     }
 
     .tarjeta-color {
         flex-basis: 100px;
+        /* Establece un tamaño base de 100 píxeles
+           para cada tarjeta dentro del contenedor Flexbox. */
+
         padding: 6px;
+        /* Reduce el espacio interno de cada tarjeta
+           para que los elementos entren mejor. */
     }
 
     .color {
         height: 130px;
+        /* Reduce la altura de las muestras de color
+           respecto de los 190 píxeles del diseño general. */
     }
 
     .tarjeta-color p {
         font-size: 0.75rem;
+        /* Reduce el tamaño del texto que muestra
+           el código HEX o HSL. */
+
         overflow-wrap: anywhere;
+        /* Permite que el código se corte en cualquier punto
+           si es demasiado largo para el ancho de la tarjeta.
+           Evita que el texto se desborde. */
     }
 
     .tarjeta-color button {
         padding: 7px 9px;
+        /* Reduce el espacio interno de los botones.
+           Primer valor: arriba y abajo.
+           Segundo valor: izquierda y derecha. */
+
         font-size: 0.75rem;
+        /* Reduce el tamaño de las letras de los botones
+           para que se adapten a las tarjetas más pequeñas. */
     }
 
     .footer {
         margin-top: 2rem;
+        /* Reduce la distancia entre el contenido principal
+           y el pie de página. */
+
         padding: 1rem;
+        /* Reduce el espacio interno del footer
+           para que no ocupe tanto lugar en el celular. */
     }
 }
