@@ -70,7 +70,7 @@ h1 {
     font-size: 3.5rem;
     /* Define el tamaño de las letras. */
 
-        font-weight: 800;
+    font-weight: 800;
     /* Hace que las letras se vean más gruesas. */
 
     font-family: 'Outfit', sans-serif;
@@ -116,7 +116,6 @@ h2 {
 
     letter-spacing: -1.5px;
     /* Reduce ligeramente el espacio entre las letras. */
-
 }
 
 
@@ -320,9 +319,7 @@ main {
 
     gap: 12px;
     /* Establece la separación entre tarjetas. */
-    
 }
-
 
 
 /* ============================================
@@ -716,7 +713,8 @@ main {
         gap: 8px;
         /* Reduce la separación entre las tarjetas
            para aprovechar mejor el ancho del celular. */
-           flex-direction: column;
+
+        flex-direction: column;
     }
 
     .tarjeta-color {

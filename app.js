@@ -1,5 +1,4 @@
-
- // ============================================
+// ============================================
 // CAPTURA DE ELEMENTOS DEL HTML
 // ============================================
 
@@ -16,7 +15,6 @@ const selectCantidad = document.getElementById("select-cantidad");
 const formatoColor = document.getElementById("formato-color");
 
 const mensaje = document.getElementById("mensaje");
-
 
 
 // ============================================
@@ -60,84 +58,84 @@ function generarPaleta() {
         // Aplicamos el color generado al fondo del cuadro.
         color.style.backgroundColor = codigoHex;
 
-       // Creamos un párrafo para mostrar el código del color.
+        // Creamos un párrafo para mostrar el código del color.
         const textoHex = document.createElement("p");
 
         // Comprobamos qué formato eligió el usuario.
         if (formatoColor.value === "hsl") {
 
-        // Convertimos el color HEX a HSL y lo mostramos.
-        textoHex.textContent = convertirHexAHsl(codigoHex);
+            // Convertimos el color HEX a HSL y lo mostramos.
+            textoHex.textContent = convertirHexAHsl(codigoHex);
 
         } else {
 
-        // Si eligió HEX, mostramos el código original.
-        textoHex.textContent = codigoHex;
+            // Si eligió HEX, mostramos el código original.
+            textoHex.textContent = codigoHex;
         }
 
         // Agregamos el párrafo a la tarjeta.
         tarjeta.appendChild(textoHex);
 
         // Creamos el botón para bloquear el color.
-const btnBloquear = document.createElement("button");
+        const btnBloquear = document.createElement("button");
 
-// Le asignamos el símbolo de desbloqueado.
-btnBloquear.textContent = "🔓";
-
-// Indicamos que inicialmente el color está desbloqueado.
-tarjeta.dataset.bloqueado = "false";
-
-// Cuando hacemos clic, cambiamos el estado del bloqueo.
-btnBloquear.addEventListener("click", function() {
-
-    if (tarjeta.dataset.bloqueado === "false") {
-
-        tarjeta.dataset.bloqueado = "true";
-        btnBloquear.textContent = "🔒";
-
-    } else {
-
-        tarjeta.dataset.bloqueado = "false";
+        // Le asignamos el símbolo de desbloqueado.
         btnBloquear.textContent = "🔓";
-    }
-});
 
-// Agregamos el botón a la tarjeta.
-tarjeta.appendChild(btnBloquear);
+        // Indicamos que inicialmente el color está desbloqueado.
+        tarjeta.dataset.bloqueado = "false";
 
-// Creamos el botón para copiar el código del color.
-const btnCopiar = document.createElement("button");
+        // Cuando hacemos clic, cambiamos el estado del bloqueo.
+        btnBloquear.addEventListener("click", function() {
 
-// Le ponemos el texto que verá el usuario.
-btnCopiar.textContent = "📋 Copiar";
+            if (tarjeta.dataset.bloqueado === "false") {
 
-// Cuando el usuario hace clic, copiamos el código HEX.
-btnCopiar.addEventListener("click", function() {
+                tarjeta.dataset.bloqueado = "true";
+                btnBloquear.textContent = "🔒";
 
-    // Obtenemos el código que se está mostrando en pantalla.
-const textoColor = tarjeta.querySelector("p").textContent;
+            } else {
 
-// Copiamos ese código al portapapeles.
-navigator.clipboard.writeText(textoColor);
+                tarjeta.dataset.bloqueado = "false";
+                btnBloquear.textContent = "🔓";
+            }
+        });
 
-    mensaje.textContent = "¡Color copiado!";
-    mensaje.style.display = "block";
+        // Agregamos el botón a la tarjeta.
+        tarjeta.appendChild(btnBloquear);
 
-    setTimeout(function() {
-        mensaje.textContent = "";
-        mensaje.style.display = "none";
-    }, 1000);
-});
+        // Creamos el botón para copiar el código del color.
+        const btnCopiar = document.createElement("button");
 
-// Agregamos el botón a la tarjeta.
-tarjeta.appendChild(btnCopiar);
+        // Le ponemos el texto que verá el usuario.
+        btnCopiar.textContent = "📋 Copiar";
+
+        // Cuando el usuario hace clic, copiamos el código HEX.
+        btnCopiar.addEventListener("click", function() {
+
+            // Obtenemos el código que se está mostrando en pantalla.
+            const textoColor = tarjeta.querySelector("p").textContent;
+
+            // Copiamos ese código al portapapeles.
+            navigator.clipboard.writeText(textoColor);
+
+            mensaje.textContent = "¡Color copiado!";
+            mensaje.style.display = "block";
+
+            setTimeout(function() {
+                mensaje.textContent = "";
+                mensaje.style.display = "none";
+            }, 1000);
+        });
+
+        // Agregamos el botón a la tarjeta.
+        tarjeta.appendChild(btnCopiar);
 
         // Agregamos la tarjeta completa al contenedor de la paleta.
         contenedorPaleta.appendChild(tarjeta);
     }
 
-        // Si el usuario elige menos colores, eliminamos las tarjetas sobrantes.
-        while (contenedorPaleta.children.length > cantidad) {
+    // Si el usuario elige menos colores, eliminamos las tarjetas sobrantes.
+    while (contenedorPaleta.children.length > cantidad) {
 
         // Eliminamos la última tarjeta de la paleta.
         contenedorPaleta.lastElementChild.remove();
@@ -274,9 +272,9 @@ function cambiarColores() {
         // Seleccionamos la tarjeta que corresponde a la posición actual.
         const tarjeta = contenedorPaleta.children[i];
 
-                // Comprobamos si el color está bloqueado.
+        // Comprobamos si el color está bloqueado.
         if (tarjeta.dataset.bloqueado === "true") {
-            continue
+            continue;
         }
 
         // Buscamos dentro de la tarjeta el cuadro que tiene la clase color.
@@ -305,15 +303,15 @@ function cambiarColores() {
             // Si eligió HEX, mostramos el código HEX original.
             textoColor.textContent = codigoHex;
         }
-      
     }
-         mensaje.textContent = "¡Paleta generada!";
-         mensaje.style.display = "block";
-        
-         setTimeout(function() {
-            mensaje.textContent = "";
-            mensaje.style.display = "none";
-        }, 500);
+
+    mensaje.textContent = "¡Paleta generada!";
+    mensaje.style.display = "block";
+
+    setTimeout(function() {
+        mensaje.textContent = "";
+        mensaje.style.display = "none";
+    }, 500);
 }
 
 
@@ -328,7 +326,7 @@ function actualizarFormatoColores() {
     for (let i = 0; i < contenedorPaleta.children.length; i++) {
 
         // Seleccionamos la tarjeta actual.
-        const tarjeta = contenedorPaleta.children[i]; 
+        const tarjeta = contenedorPaleta.children[i];
 
         // Recuperamos el código HEX original guardado en la tarjeta.
         const codigoHex = tarjeta.dataset.hex;
