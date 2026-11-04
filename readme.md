@@ -115,4 +115,5 @@ Para futuras versiones de Colorfly Studio, se proponen las siguientes mejoras:
 
 Durante el desarrollo de Colorfly Studio utilicé ChatGPT como herramienta de apoyo para el aprendizaje, la comprensión de conceptos de programación y la resolución de problemas.
 
-Para conocer en detalle el proceso de trabajo, las consultas realizadas, las explicaciones recibidas y las evidencias de mi participación, podés consultar la [Documentación del uso de IA](./uso-de-ia/README.md)
+Para conocer en detalle el proceso de trabajo, las consultas realizadas, las explicaciones recibidas y las evidencias de mi participación, podés consultar la 
+[Ver documentación del uso de IA](uso-de-ia/README.md)
