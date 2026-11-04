@@ -129,7 +129,8 @@ Esta instancia resume el enfoque de trabajo que mantuve durante el proyecto: pri
 
 Para quienes deseen profundizar en el proceso de desarrollo y conocer en detalle mi intercambio con ChatGPT, dejo a disposición la conversación completa.
 
-* [**Consultar la conversación completa**](https://chatgpt.com/share/6ae3f2b6-0188-83e9-a2d1-d88ac64d9232)
+* [**Consultar la conversación completa**]
+<a href="https://chatgpt.com/share/6ae3f2b6-0188-83e9-a2d1-d88ac64d9232" target="_blank" rel="noopener noreferrer">Consultar la conversación completa</a>
 
 
 Este material permite recorrer el proceso de trabajo, las consultas realizadas, las explicaciones recibidas, las decisiones tomadas y la evolución del proyecto.
