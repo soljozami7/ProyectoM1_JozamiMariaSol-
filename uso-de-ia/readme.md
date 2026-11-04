@@ -81,6 +81,13 @@ En este ejemplo planteé que, si el usuario tenía una paleta de seis colores y 
 
 Este pedido refleja mi participación en el diseño de la experiencia de usuario y en la definición de nuevas funcionalidades.
 
+En cuanto a la devolución de ChatGPT, me resultó útil porque no se limitó a indicarme qué código debía agregar, sino que me permitió comprender cómo podía resolver la situación e integrarla con la lógica que ya tenía desarrollada.
+
+Valoro especialmente que las explicaciones fueran paso a paso, ya que me ayudaron a entender el funcionamiento de la solución y no simplemente copiar y pegar código. Esto me permitió seguir participando activamente en el desarrollo del proyecto, probar los cambios y consultar nuevamente cuando algo no funcionaba como esperaba.
+
+
+
+
 **Captura 06 — Prompt: mantener los colores al cambiar de formato**
 
 ![Prompt para conservar la paleta al cambiar de formato](./06-prompt-mantener-colores-al-cambiar-formato.png)
@@ -88,6 +95,9 @@ Este pedido refleja mi participación en el diseño de la experiencia de usuario
 En esta instancia propuse que, al cambiar entre los formatos HEX y HSL, la aplicación conservara los colores que ya estaban en pantalla y modificara únicamente sus códigos.
 
 También solicité trabajar paso a paso, teniendo en cuenta los contenidos de las clases de consulta y las exposiciones de mis compañeros, para que las soluciones estuvieran relacionadas con lo aprendido durante la cursada.
+
+Chatgpt respondió muy bien, siempre integrando solo conceptos aprendidos en las lectures de la carrera. 
+
 
 ## 5. Pruebas, detección de errores y mejoras
 
