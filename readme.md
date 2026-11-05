@@ -62,15 +62,21 @@ Colorfly Studio cuenta con un diseño adaptable a distintos dispositivos, permit
 
 Para visualizar Colorfly Studio en tu computadora, seguí estos pasos:
 
-1. Descargá el proyecto desde [GitHub](https://github.com/soljozami7/ProyectoM1_JozamiMariaSol-) utilizando la opción **Code → Download ZIP**.
-2. Descomprimí el archivo descargado.
-3. Abrí la carpeta del proyecto en **Visual Studio Code**.
-4. Abrí el archivo `index.html`.
-5. Hacé clic derecho sobre el archivo y seleccioná **Open with Live Server**.
+1. Ingresá al repositorio del proyecto en [GitHub](https://github.com/soljozami7/ProyectoM1_JozamiMariaSol-).
+
+2. Hacé clic en el botón **Code**, copiá la URL del repositorio HTTPS.
+
+3. Abrí **Visual Studio Code** y seleccioná la opción **Clone Git Repository**.
+
+4. Pegá la URL que copiaste de GitHub y seleccioná la carpeta donde quieras guardar el proyecto.
+
+5. Una vez finalizada la clonación, abrí el proyecto en Visual Studio Code.
+
+6. Abrí el archivo `index.html`, hacé clic derecho y seleccioná **Open with Live Server**.
 
 La aplicación se abrirá automáticamente en tu navegador y estará lista para usar.
 
-**Requisito:** tener instalado Visual Studio Code y la extensión Live Server.
+**Requisitos:** tener instalado Git, Visual Studio Code y la extensión Live Server.
 
 ## Decisiones técnicas
 
