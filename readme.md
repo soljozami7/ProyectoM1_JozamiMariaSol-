@@ -101,7 +101,7 @@ Para publicar Colorfly Studio en internet utilicé GitHub Pages.
 1. Subí los archivos del proyecto a un repositorio de GitHub.
 2. Ingresé a la sección **Settings** del repositorio.
 3. Seleccioné la opción **Pages**.
-4. En **Build and deployment**, elegí la rama `main` y la carpeta `/ (root)` como fuente de publicación.
+4. En **Build and deployment**, elegí la rama `main` y la carpeta `/ (docs)` como fuente de publicación.
 5. Guardé los cambios y esperé a que GitHub Pages generara el sitio.
 
 Una vez finalizado el proceso, la aplicación quedó disponible en el siguiente enlace:
